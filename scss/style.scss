@@ -1,1 +1,28 @@
 @import 'reset';
+
+h1 {
+	position: absolute;
+	top: 15vh;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.sns {
+	position: absolute;
+	top: 15vh;
+	right: 10%;
+	display: flex;
+
+	a {
+		font-size: 20px;
+		color: #fff;
+		margin: 0 10px;
+		opacity: 0.5;
+		transition: 0.5s;
+		display: inline-block;
+
+		&:hover {
+			opacity: 1;
+			transform: scale(1.5);
+		}
+	}
+}
