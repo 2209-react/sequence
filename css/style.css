@@ -79,10 +79,11 @@ nav article {
   position: relative;
   perspective: 700px;
 }
-nav article a {
+nav article > a {
   font: 12px/50px "orbitron";
   color: #aaa;
   letter-spacing: 1px;
+  transition: 0.5s;
 }
 nav article div {
   width: 100%;
@@ -93,6 +94,9 @@ nav article div {
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid #000;
   padding: 10px;
+  opacity: 0;
+  transform: scale(0) rotateY(360deg);
+  transition: 0.5s;
 }
 nav article div p {
   width: 100%;
@@ -128,6 +132,18 @@ nav article div ul li a {
   font: 12px/1 "orbitron";
   color: #888;
   letter-spacing: 1px;
+  transition: 0.5s;
+}
+nav article div ul li a:hover {
+  color: orange;
+}
+nav article:hover > a {
+  margin-left: -100px;
+  opacity: 0;
+}
+nav article:hover div {
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
 }
 
 /*# sourceMappingURL=style.css.map */
