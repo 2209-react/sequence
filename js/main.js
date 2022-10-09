@@ -20,6 +20,7 @@ imgDOM.forEach(function (img) {
 		//증가되는 카운트값을 다시 백분율로 변환
 		var percent = parseInt((count / 200) * 100);
 		mask.querySelector('span').innerText = percent;
+		mask.querySelector('.bar').style.width = percent + '%';
 
 		//백분율이 100에 도달하면
 		if (percent === 100) {
