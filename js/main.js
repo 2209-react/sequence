@@ -1,6 +1,7 @@
 var frame = document.querySelector('section');
 var mask = document.querySelector('aside');
 var imgs = '';
+var delay = convertSpeed('aside');
 
 //200개의 이미지를 동적으로 생성 후 변수에 할당
 for (var i = 0; i < 200; i++) {
@@ -31,7 +32,7 @@ imgDOM.forEach(function (img) {
 			setTimeout(function () {
 				//마스크 dom을 아예 제거
 				mask.remove();
-			}, 2000);
+			}, delay);
 		}
 	};
 });
@@ -46,3 +47,10 @@ window.addEventListener('mousemove', function (e) {
 	});
 	imgDOM[percent].style.display = 'block';
 });
+
+//특정 DOM의 transition-duration값을 밀리세컨드로 반환하는 함수
+function convertSpeed(el) {
+	var item = document.querySelector(el);
+	var dur = parseFloat(getComputedStyle(item).transitionDuration) * 1000;
+	return dur;
+}
